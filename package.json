@@ -1,0 +1,36 @@
+{
+  "name": "formik-validation-debugger",
+  "version": "1.0.0",
+  "description": "A debugging utility for complex Formik + Yup validation schemas",
+  "main": "index.js",
+  "scripts": {
+   "build": "tsup src/core/index.ts --format cjs,esm --dts",
+    "dev": "tsup src/core/index.ts --format cjs,esm --dts --watch",
+    "test": "node examples/basic-test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VigilVanDijk/formik-validation-debugger.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/VigilVanDijk/formik-validation-debugger/issues"
+  },
+  "homepage": "https://github.com/VigilVanDijk/formik-validation-debugger#readme",
+  "devDependencies": {
+    "@types/node": "^24.0.14",
+    "@types/react": "^19.1.8",
+    "@typescript-eslint/eslint-plugin": "^8.37.0",
+    "@typescript-eslint/parser": "^8.37.0",
+    "eslint": "^9.31.0",
+    "formik": "^2.4.6",
+    "prettier": "^3.6.2",
+    "react": "^19.1.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3",
+    "yup": "^1.6.1"
+  }
+}
