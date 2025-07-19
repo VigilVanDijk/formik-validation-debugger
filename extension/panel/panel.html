@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Formik Validation Debugger</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            font-size: 14px;
+        }
+        
+        .header {
+            border-bottom: 1px solid #404040;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 18px;
+            color: #569cd6;
+        }
+        
+        .status {
+            margin-top: 5px;
+            font-size: 12px;
+            color: #808080;
+        }
+        
+        .validation-item {
+            background: #252526;
+            border: 1px solid #404040;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            padding: 15px;
+        }
+        
+        .validation-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .validation-id {
+            font-weight: bold;
+            color: #4ec9b0;
+        }
+        
+        .validation-status {
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+        
+        .status-valid {
+            background-color: #0e8a16;
+            color: white;
+        }
+        
+        .status-invalid {
+            background-color: #d73a49;
+            color: white;
+        }
+        
+        .validation-details {
+            margin-top: 15px;
+        }
+        
+        .section {
+            margin-bottom: 15px;
+        }
+        
+        .section-title {
+            font-weight: bold;
+            color: #569cd6;
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+        
+        .error-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .error-item {
+            background: #5a1d1d;
+            border-left: 3px solid #d73a49;
+            padding: 8px 12px;
+            margin-bottom: 5px;
+            border-radius: 0 3px 3px 0;
+        }
+        
+        .error-path {
+            font-weight: bold;
+            color: #f97583;
+            font-size: 12px;
+        }
+        
+        .error-message {
+            color: #ffeaa7;
+            margin-top: 3px;
+            font-size: 12px;
+        }
+        
+        .tree-container {
+            background: #1a1a1a;
+            border: 1px solid #404040;
+            border-radius: 3px;
+            padding: 10px;
+            overflow: auto;
+            max-height: 300px;
+        }
+        
+        .tree-node {
+            margin-left: 0;
+            font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
+            font-size: 12px;
+        }
+        
+        .tree-node .node-children {
+            margin-left: 20px;
+        }
+        
+        .node-header {
+            padding: 2px 0;
+            cursor: pointer;
+        }
+        
+        .node-path {
+            color: #4ec9b0;
+            font-weight: bold;
+        }
+        
+        .node-type {
+            color: #569cd6;
+        }
+        
+        .node-valid {
+            color: #608b4e;
+        }
+        
+        .node-invalid {
+            color: #f97583;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: #808080;
+        }
+        
+        .timestamp {
+            font-size: 11px;
+            color: #808080;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🔍 Formik Validation Debugger</h1>
+        <div class="status" id="status">Waiting for validation data...</div>
+    </div>
+    
+    <div id="content">
+        <div class="empty-state">
+            <p>No validation data detected.</p>
+            <p>Make sure you're using Formik with Yup validation on this page.</p>
+        </div>
+    </div>
+    
+    <script src="panel.js"></script>
+</body>
+</html>
