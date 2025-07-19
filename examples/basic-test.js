@@ -44,7 +44,7 @@ try {
 }
 
 // Debug the validation
-const result = debugYupSchema(schema, invalidData);
+const result = debugYupSchema(schema, invalidData, {makeValidationTree : false});
 
 console.log('\n=== VALIDATION RESULT ===');
 console.log('Is Valid:', result.isValid);
@@ -55,5 +55,8 @@ Object.keys(result.fieldErrors).forEach(field => {
   console.log(`${field}:`, result.fieldErrors[field].map(e => e.message));
 });
 
-console.log('\n=== VALIDATION TREE ===');
-console.log(JSON.stringify(result.validationTree, null, 2));
+if(result.validationTree)
+{
+    console.log('\n=== VALIDATION TREE ===');
+    console.log(JSON.stringify(result.validationTree, null, 2));
+}
