@@ -10,7 +10,7 @@ export interface ValidationResult {
   isValid: boolean;
   errors: ValidationError[];
   fieldErrors: Record<string, ValidationError[]>;
-  validationTree: ValidationNode;
+  validationTree: ValidationNode | undefined;
 }
 
 export interface ValidationNode {
@@ -34,4 +34,5 @@ export interface DebugOptions {
   includeValidFields?: boolean;
   maxDepth?: number;
   abortEarly?: boolean;
+  makeValidationTree?: boolean
 }
