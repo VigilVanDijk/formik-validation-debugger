@@ -69,12 +69,7 @@ export class YupDebugger {
     }
 
     // Build validation tree
-    let validationTree = undefined;
-    if(this.options.makeValidationTree)
-    {
-        const validationTree = this.buildValidationTree(this.schema, values, '', errors);
-    }
-
+      const validationTree = this.options.makeValidationTree ? this.buildValidationTree(this.schema, values, '', errors): undefined;
     return {
       isValid: errors.length === 0,
       errors,
