@@ -44,8 +44,7 @@ try {
 }
 
 // Debug the validation
-const result = debugYupSchema(schema, invalidData, {makeValidationTree : false});
-
+const result = debugYupSchema(schema, invalidData, {makeValidationTree : true});
 console.log('\n=== VALIDATION RESULT ===');
 console.log('Is Valid:', result.isValid);
 console.log('Errors:', result.errors.length);
